@@ -32,14 +32,14 @@ const Certifications: React.FC<RecentProjectsProps> = ({ id }) => {
       id={id}
       className="certifications-list min-h-screen px-4 py-8 rounded-lg shadow-lg"
     >
-      <h2 className="text-3xl font-bold mb-8 text-center text-gray-800 dark:text-gray-100">
+      <h2 className="text-3xl font-bold mb-8 text-center text-theme-neutral-900 dark:text-white">
         My Certifications
       </h2>
       <div className="certification-items-container grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
         {certifications.map((cert) => (
           <div
             key={cert.id}
-            className="certification-item bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 flex flex-col items-center transition-all hover:scale-105 hover:shadow-xl"
+            className="certification-item bg-gradient-to-br from-theme-yellow-50 to-theme-yellow-100 dark:bg-gradient-to-br dark:from-theme-yellow-900/10 dark:to-theme-yellow-900/10 border border-theme-yellow-200 dark:border-theme-yellow-700/30 rounded-xl shadow-md p-6 flex flex-col items-center transition-all hover:scale-105 hover:shadow-xl hover:shadow-theme-yellow-200/20 dark:hover:shadow-theme-yellow-800/20"
           >
             {cert.companyLogoPublicId && (
               <div className="company-logo mb-4">
@@ -68,10 +68,10 @@ const Certifications: React.FC<RecentProjectsProps> = ({ id }) => {
             </div>
 
             <div className="cert-details text-center">
-              <p className="cert-name text-lg font-semibold text-gray-900 dark:text-gray-100">
+              <p className="cert-name text-lg font-semibold text-theme-neutral-900 dark:text-white">
                 {cert.name}
               </p>
-              <p className="cert-company text-sm text-gray-600 dark:text-gray-400">
+              <p className="cert-company text-sm text-theme-neutral-600 dark:text-theme-neutral-400">
                 Issued by: {cert.company}
               </p>
               {cert.certificateLink && (
@@ -79,7 +79,7 @@ const Certifications: React.FC<RecentProjectsProps> = ({ id }) => {
                   href={cert.certificateLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-2 inline-block px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+                  className="mt-2 inline-block px-4 py-2 bg-gradient-to-r from-theme-yellow-600 to-theme-yellow-700 text-white rounded-lg hover:from-theme-yellow-700 hover:to-theme-yellow-800 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg"
                 >
                   View Certificate
                 </a>

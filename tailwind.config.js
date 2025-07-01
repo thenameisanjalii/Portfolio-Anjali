@@ -31,10 +31,64 @@ const config = {
           100: "#BEC1DD",
           200: "#C1C2D3",
         },
-        blue: {
-          100: "#E4ECFF",
+        // Deep Ocean Professional Theme
+        theme: {
+          primary: {
+            50: "#f0f9ff",
+            100: "#e0f2fe", 
+            200: "#bae6fd",
+            300: "#7dd3fc",
+            400: "#38bdf8",
+            500: "#0ea5e9",  // Main sky blue
+            600: "#0284c7",
+            700: "#0369a1",
+            800: "#075985",
+            900: "#0c4a6e"
+          },
+          accent: {
+            50: "#f8fafc",
+            100: "#f1f5f9",
+            200: "#e2e8f0",
+            300: "#cbd5e1",
+            400: "#94a3b8",
+            500: "#64748b",  // Main slate
+            600: "#475569",
+            700: "#334155",
+            800: "#1e293b",
+            900: "#0f172a"
+          },
+          neutral: {
+            50: "#f8fafc",
+            100: "#f1f5f9",
+            200: "#e2e8f0",
+            300: "#cbd5e1",
+            400: "#94a3b8",
+            500: "#64748b",
+            600: "#475569",
+            700: "#334155",
+            800: "#1e293b",
+            900: "#0f172a"  // Deep slate for dark backgrounds
+          },
+          yellow: {
+            50: "#fffbeb",   // Very light cream
+            100: "#fef3c7",  // Light cream
+            200: "#fde68a",  // Light yellow
+            300: "#fcd34d",  // Medium light yellow
+            400: "#fbbf24",  // Medium yellow
+            500: "#f59e0b",  // Professional amber
+            600: "#d97706",  // Darker amber
+            700: "#b45309",  // Deep amber
+            800: "#92400e",  // Very deep amber
+            900: "#78350f"   // Darkest amber
+          }
         },
-        purple: "#CBACF9",
+        // Keep legacy colors for compatibility
+        blue: {
+          100: "#e0f2fe",
+          500: "#0ea5e9",
+          600: "#0284c7",
+        },
+        purple: "#0ea5e9", // Replace purple with primary blue
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

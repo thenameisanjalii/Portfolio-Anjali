@@ -12,11 +12,11 @@ export function TypewriterEffectSmoothDemo() {
     },
     {
       text: "Life.",
-      className: "text-blue-500 dark:text-blue-500",
+      className: "text-yellow-500 dark:text-yellow-500",
     },
   ];
   return (
-    <div>
+    <div className="flex justify-center items-center text-center w-full">
       <TypewriterEffectSmooth words={words} />
     </div>
   );

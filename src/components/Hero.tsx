@@ -2,92 +2,81 @@ import React from "react";
 import { FaLocationArrow } from "react-icons/fa6";
 import MagicButton from "./MagicButton";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
-import Model from "./ModelViewer";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Environment } from "@react-three/drei";
+// import Model from "./ModelViewer";
+// import { Canvas } from "@react-three/fiber";
+// import { OrbitControls, Environment } from "@react-three/drei";
 import { TypewriterEffectSmoothDemo } from "./TypeWriteSmoothDemo";
+import { BackgroundLines } from "./ui/background-lines";
 
 const Hero: React.FC = () => {
   const scrollToProjects = (e: React.MouseEvent) => {
     e.preventDefault();
-    const projectsSection = document.getElementById('projects');
-    projectsSection?.scrollIntoView({ behavior: 'smooth' });
+    const projectsSection = document.getElementById("projects");
+    projectsSection?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <div className="pb-20 pt-24 flex flex-col-reverse lg:flex-row items-center lg:justify-between gap-12 lg:gap-0">
-      {/** Content Section (Left) **/}
-      <div className="lg:w-1/2 w-full px-6 md:px-8 lg:px-0 text-center lg:text-left">
-        <p className="uppercase tracking-widest text-xs dark:text-blue-100 text-blue-600 hidden lg:block xl:block">
-          <TypewriterEffectSmoothDemo />
-        </p>
+    <BackgroundLines>
+      <div className="pb-20 pt-24 flex flex-col items-center justify-center text-center min-h-[80vh] relative overflow-hidden">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Floating geometric shapes */}
+          <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-yellow-400/20 rounded-full animate-pulse"></div>
+          <div className="absolute top-1/3 right-1/4 w-6 h-6 bg-yellow-500/30 rounded-full animate-bounce delay-300"></div>
+          <div className="absolute bottom-1/4 left-1/3 w-3 h-3 bg-yellow-600/25 rounded-full animate-ping delay-500"></div>
+          <div className="absolute top-1/2 right-1/3 w-5 h-5 bg-yellow-400/20 rounded-full animate-pulse delay-700"></div>
 
-        <TextGenerateEffect
-          words="Full Stack Developer- From Backend Logic to Frontend Magic"
-          className="text-center lg:text-left text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-4 dark:text-white text-[#1A202C] font-bold"
-        />
+          {/* Gradient orbs */}
+          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-yellow-400/10 to-yellow-600/10 rounded-full blur-xl animate-float"></div>
+          <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-r from-yellow-500/10 to-yellow-700/10 rounded-full blur-xl animate-float-delayed"></div>
+        </div>
 
-        {/* <p className="text-center lg:text-left md:tracking-wider mt-4 mb-6 text-sm sm:text-md md:text-lg lg:text-2xl dark:text-gray-300 text-[#4A5568]">
-          Hi, I'm Anjali Chourasia, a passionate Full Stack Developer specializing in 
-          building exceptional digital experiences. With expertise in React, Node.js, 
-          and modern web technologies, I transform ideas into elegant, efficient solutions.
-        </p> */}
+        {/** Enhanced Content Section with glass morphism **/}
+        <div className="max-w-4xl w-full px-6 md:px-8 relative z-10">
+          <div className="group bg-white/5 dark:bg-black/20 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-yellow-200/20 dark:border-yellow-600/20 shadow-2xl hover:shadow-yellow-400/10 hover:border-yellow-400/30 transition-all duration-500">
+            {/* Add floating tech icons */}
+            <div className="absolute -top-4 -right-4 bg-yellow-400 text-white p-2 rounded-full shadow-lg group-hover:scale-110 transition-transform duration-300">
+              <span className="text-sm">⚡</span>
+            </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-          <a href="#projects" onClick={scrollToProjects}>
-            <MagicButton
-              title="View My Projects"
-              icon={<FaLocationArrow />}
-              position="right"
+            <div className="absolute -bottom-4 -left-4 bg-yellow-500 text-white p-2 rounded-full shadow-lg group-hover:scale-110 transition-transform duration-300 delay-100">
+              <span className="text-sm">🚀</span>
+            </div>
+
+            <div className="uppercase tracking-widest text-xs dark:text-theme-primary-200 text-theme-primary-600 mb-6 text-center">
+              <TypewriterEffectSmoothDemo />
+            </div>
+
+            {/* Enhanced gradient line */}
+            <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 mx-auto mb-6 rounded-full shadow-md"></div>
+
+            <TextGenerateEffect
+              words="Full Stack Developer- From Backend Logic to Frontend Magic"
+              className="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-4 dark:text-white text-theme-neutral-900 font-bold group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors duration-300"
             />
-          </a>
+
+            {/* Enhanced tagline with emojis */}
+            <p className="text-center mt-6 mb-8 text-lg md:text-xl dark:text-gray-300 text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              🎯 Turning ideas into{" "}
+              <span className="text-yellow-600 dark:text-yellow-400 font-semibold">
+                digital reality
+              </span>
+              <br />✨ One line of code at a time
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+              <a href="#projects" onClick={scrollToProjects}>
+                <MagicButton
+                  title="View My Projects"
+                  icon={<FaLocationArrow />}
+                  position="right"
+                />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-
-      {/** 3D Model Section (Right) **/}
-      <div className="lg:w-1/2 w-full flex justify-center items-center relative">
-        <div className="relative w-full max-w-[400px] md:max-w-[500px] lg:max-w-[600px] h-[400px] md:h-[500px] lg:h-[696px] overflow-hidden">
-          <Canvas
-            camera={{
-              position: [0, 1, 5],
-              fov: 45,
-            }}
-            style={{ width: "100%", height: "100%" }}
-          >
-            {/** Ambient Light for global brightness **/}
-            <ambientLight intensity={1.0} />
-
-            {/** Native Directional Light **/}
-            <directionalLight
-              intensity={1.5}
-              position={[-5, 10, -5]}
-              castShadow
-            />
-            <directionalLight
-              intensity={5.5}
-              position={[-5, 10, -5]}
-              castShadow
-            />
-
-            {/** Environment for HDR lighting **/}
-            <Environment preset="sunset" background={false} />
-
-            {/** OrbitControls with zoom disabled **/}
-            <OrbitControls
-              enableZoom={false}
-              enablePan={true}
-              enableRotate={true}
-              autoRotate={false}
-            />
-
-            {/** Render the 3D Model **/}
-            <group scale={[3.7, 3.7, 3.7]} position={[0, 1.6, 0]}>
-              <Model modelPath="/forniteModel.glb" animationType="default" />
-            </group>
-          </Canvas>
-        </div>
-      </div>
-    </div>
+    </BackgroundLines>
   );
 };
 

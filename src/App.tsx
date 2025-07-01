@@ -9,10 +9,16 @@ import Skills from "./components/Skills";
 import Resume from "./components/Resume";
 import { LoadingProvider } from "./context/LoadingContext";
 import Loader from "./components/ui/Loader";
-import { AnimatePresence } from "framer-motion";
 import { useLoading } from "./context/LoadingContext";
 import { FloatingNav } from "./components/ui/FloatingNavbar";
-import { FaHome, FaCode, FaBriefcase, FaUser } from "react-icons/fa";
+import {
+  FaHome,
+  FaCode,
+  FaBriefcase,
+  FaUser,
+  FaInfoCircle,
+  FaTrophy,
+} from "react-icons/fa";
 import AboutMe from "./components/AboutMe";
 import Certifications from "./components/Certificates";
 
@@ -26,7 +32,7 @@ const navItems = [
   {
     name: "About",
     link: "#about",
-    icon: <FaHome />,
+    icon: <FaInfoCircle />,
   },
   {
     name: "Skills",
@@ -41,7 +47,7 @@ const navItems = [
   {
     name: "Achievements",
     link: "#achievements",
-    icon: <FaUser />,
+    icon: <FaTrophy />,
   },
   {
     name: "Projects",
@@ -55,29 +61,36 @@ function AppContent() {
 
   return (
     <>
-      <AnimatePresence>{isLoading && <Loader />}</AnimatePresence>
-      <FloatingNav navItems={navItems} />
-      <main
-        className={`dark:bg-black bg-gray-50 min-h-screen flex items-center flex-col overflow-hidden mx-auto sm:px-10 px-5 ${
-          isLoading ? "pointer-events-none" : ""
-        }`}
-      >
-        <div>
-          <TracingBeam className="px-6 h-full">
-            <div className="max-w-7xl w-full mx-auto">
-              <Hero />
-              <AboutMe id="about"/>
-              <Grid />
-              <Skills id="skills" />
-              <Resume id="resume" />
-              <Certifications id="achievements"/>
-              <RecentProjects id="projects" />
-              <CanvasRevealEffectDemo />
-              <Footer />
+      {/* Show loader when loading */}
+      {isLoading && <Loader />}
+
+      {/* Hide main content when loading */}
+      {!isLoading && (
+        <>
+          <FloatingNav navItems={navItems} />
+          <main
+            className={`dark:bg-black bg-theme-neutral-50 min-h-screen flex items-center flex-col overflow-hidden mx-auto sm:px-10 px-5 ${
+              isLoading ? "pointer-events-none" : ""
+            }`}
+          >
+            <div>
+              <TracingBeam className="px-6 h-full">
+                <div className="max-w-7xl w-full mx-auto">
+                  <Hero />
+                  <AboutMe id="about" />
+                  <Grid />
+                  <Skills id="skills" />
+                  <Resume id="resume" />
+                  <Certifications id="achievements" />
+                  <RecentProjects id="projects" />
+                  <CanvasRevealEffectDemo />
+                  <Footer />
+                </div>
+              </TracingBeam>
             </div>
-          </TracingBeam>
-        </div>
-      </main>
+          </main>
+        </>
+      )}
     </>
   );
 }

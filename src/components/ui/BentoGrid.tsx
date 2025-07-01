@@ -71,12 +71,15 @@ export const BentoGridItem: React.FC<{
     <div
       className={cn(
         "row-span-1 relative overflow-hidden rounded-2xl border transition-all duration-300 justify-between flex flex-col",
-        "dark:border-white/[0.1] border-gray-200/70",
-        "dark:bg-[#04071D]/80 bg-white/90",
-        "hover:border-gray-300 dark:hover:border-white/[0.2]",
+        // Subtle yellow professional theme
+        "border-yellow-200/40 dark:border-yellow-600/20",
+        "bg-yellow-50/30 dark:bg-yellow-950/10",
+        "hover:border-yellow-300/50 dark:hover:border-yellow-500/30",
+        "hover:shadow-lg hover:shadow-yellow-200/20 dark:hover:shadow-yellow-600/10",
+        "hover:scale-[1.02] hover:-translate-y-1",
         "backdrop-blur-sm",
         className,
-        id === 6 ? "dark:bg-black/50 bg-white/90" : ""
+        id === 6 ? "bg-yellow-50/40 dark:bg-yellow-950/20" : ""
       )}
     >
       <div className={`${id === 6 && "flex justify-center"} h-full relative`}>
@@ -98,6 +101,15 @@ export const BentoGridItem: React.FC<{
             />
           )}
         </div>
+
+        {/* Golden torch light overlay for first card */}
+        {id === 1 && (
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute inset-0 bg-gradient-to-br from-yellow-300/20 via-yellow-400/10 to-transparent dark:from-yellow-400/30 dark:via-yellow-500/15 dark:to-transparent opacity-60 dark:opacity-80 transition-opacity duration-300"></div>
+            <div className="absolute top-4 right-4 w-16 h-16 bg-gradient-to-br from-yellow-200/40 via-yellow-300/30 to-yellow-400/20 dark:from-yellow-300/50 dark:via-yellow-400/40 dark:to-yellow-500/30 rounded-full blur-xl animate-pulse"></div>
+            <div className="absolute top-6 right-6 w-8 h-8 bg-gradient-to-br from-yellow-300/60 via-yellow-400/50 to-yellow-500/40 dark:from-yellow-200/70 dark:via-yellow-300/60 dark:to-yellow-400/50 rounded-full blur-sm"></div>
+          </div>
+        )}
         <div
           className={cn(
             "absolute right-0 -bottom-5 transition-opacity duration-300",
@@ -120,11 +132,11 @@ export const BentoGridItem: React.FC<{
         {id === 6 && (
           <BackgroundGradientAnimation>
             <div className="absolute z-50 inset-0 flex items-center justify-center font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl">
-              <div className="bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-500 dark:to-blue-500 bg-clip-text text-transparent relative">
+              <div className="bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 dark:from-yellow-300 dark:via-yellow-400 dark:to-yellow-500 bg-clip-text text-transparent relative">
                 <span className="relative z-10">
                   Ready to create something extraordinary together?
                 </span>
-                <span className="absolute inset-0 blur-sm bg-gradient-to-r from-purple-600/20 to-blue-600/20 dark:from-purple-500/20 dark:to-blue-500/20 -z-10"></span>
+                <span></span>
               </div>
             </div>
           </BackgroundGradientAnimation>
@@ -137,10 +149,10 @@ export const BentoGridItem: React.FC<{
             "group-hover/bento:translate-x-1"
           )}
         >
-          <div className="font-sans font-light md:max-w-32 md:text-xs lg:text-sm text-sm dark:text-[#C1C2D3] text-gray-600 z-10 relative mb-2">
+          <div className="font-sans font-light md:max-w-32 md:text-xs lg:text-sm text-sm dark:text-theme-neutral-300 text-theme-neutral-600 z-10 relative mb-2">
             {description}
           </div>
-          <div className="font-sans text-lg lg:text-2xl max-w-96 font-semibold dark:text-white/90 text-gray-800 z-10 relative">
+          <div className="font-sans text-lg lg:text-2xl max-w-96 font-semibold dark:text-white/90 text-theme-neutral-800 z-10 relative">
             {title}
           </div>
 
@@ -152,24 +164,24 @@ export const BentoGridItem: React.FC<{
                     key={i}
                     className="lg:py-3 lg:px-4 py-2 px-3 text-xs lg:text-sm
                     rounded-lg text-center transition-colors duration-300
-                    dark:bg-[#10132E]/80 bg-gray-100/80
-                    dark:text-white/80 text-gray-800
+                    dark:bg-theme-neutral-800/80 bg-theme-neutral-100/80
+                    dark:text-white/80 text-theme-neutral-800
                     backdrop-blur-sm"
                   >
                     {item}
                   </span>
                 ))}
-                <span className="lg:py-3 lg:px-4 py-2 px-3 rounded-lg text-center dark:bg-[#10132E]/80 bg-gray-100/80 backdrop-blur-sm"></span>
+                <span className="lg:py-3 lg:px-4 py-2 px-3 rounded-lg text-center dark:bg-theme-neutral-800/80 bg-theme-neutral-100/80 backdrop-blur-sm"></span>
               </div>
               <div className="flex flex-col gap-2 md:gap-3 lg:gap-6">
-                <span className="lg:py-3 lg:px-4 py-2 px-3 rounded-lg text-center dark:bg-[#10132E]/80 bg-gray-100/80 backdrop-blur-sm"></span>
+                <span className="lg:py-3 lg:px-4 py-2 px-3 rounded-lg text-center dark:bg-theme-neutral-800/80 bg-theme-neutral-100/80 backdrop-blur-sm"></span>
                 {rightLists.map((item, i) => (
                   <span
                     key={i}
                     className="lg:py-3 lg:px-4 py-2 px-3 text-xs lg:text-sm
                     rounded-lg text-center transition-colors duration-300
-                    dark:bg-[#10132E]/80 bg-gray-100/80
-                    dark:text-white/80 text-gray-800
+                    dark:bg-theme-neutral-800/80 bg-theme-neutral-100/80
+                    dark:text-white/80 text-theme-neutral-800
                     backdrop-blur-sm"
                   >
                     {item}

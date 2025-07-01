@@ -31,11 +31,14 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="flex flex-col items-center relative z-10">
-          <h1 className="heading lg:max-w-[45vw] text-center">
-            Ready to bring your <span className="text-purple">ideas</span> to
-            life?
+          <h1 className="heading lg:max-w-[45vw] text-center dark:text-white text-theme-neutral-900">
+            Ready to bring your{" "}
+            <span className="text-theme-yellow-600 dark:text-theme-yellow-600">
+              ideas
+            </span>{" "}
+            to life?
           </h1>
-          <p className="text-white-200 md:mt-10 my-5 text-center">
+          <p className="text-theme-neutral-600 dark:text-theme-neutral-400 md:mt-10 my-5 text-center">
             Feel free to reach out — I&apos;m here to help turn your goals into
             real, working solutions.
           </p>
@@ -51,7 +54,7 @@ const Footer: React.FC = () => {
 
       {/* Social media and copyright section */}
       <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
-        <p className="md:text-base text-sm md:font-normal font-light">
+        <p className="md:text-base text-sm md:font-normal font-light text-theme-neutral-600 dark:text-theme-neutral-400">
           Copyright © 2024 Anjali Chourasia
         </p>
 
@@ -66,8 +69,10 @@ const Footer: React.FC = () => {
               <div
                 className="w-10 h-10 cursor-pointer flex justify-center items-center 
                 backdrop-filter backdrop-blur-lg saturate-180 
-                bg-opacity-75 bg-black-200 
-                rounded-lg border border-black-300"
+                bg-opacity-75 dark:bg-theme-neutral-800 bg-theme-neutral-200
+                rounded-lg border dark:border-theme-neutral-700 border-theme-neutral-300
+                hover:bg-opacity-90 dark:hover:bg-theme-neutral-700 hover:bg-theme-neutral-100
+                transition-colors duration-200"
               >
                 <img
                   src={info.img}

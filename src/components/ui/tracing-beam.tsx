@@ -84,11 +84,11 @@ export const TracingBeam = ({
                     backgroundColor:
                       scrollYProgress.get() > 0
                         ? "white"
-                        : "var(--emerald-500)",
+                        : "var(--theme-yellow-500)",
                     borderColor:
                       scrollYProgress.get() > 0
                         ? "white"
-                        : "var(--emerald-600)",
+                        : "var(--theme-yellow-600)",
                   }}
                 />
               </div>
@@ -114,7 +114,7 @@ export const TracingBeam = ({
                 duration: 10,
               }}
             ></motion.path>
-            
+
             {/** Gradient Path with Bold Stroke **/}
             <motion.path
               d={`M 1 0V -36 l 18 24 V ${
@@ -139,10 +139,10 @@ export const TracingBeam = ({
                 y1={y1} // set y1 for gradient
                 y2={y2} // set y2 for gradient
               >
-                <stop stopColor="#18CCFC" stopOpacity="0"></stop>
-                <stop stopColor="#18CCFC"></stop>
-                <stop offset="0.325" stopColor="#6344F5"></stop>
-                <stop offset="1" stopColor="#AE48FF" stopOpacity="0"></stop>
+                <stop stopColor="#FCD34D" stopOpacity="0"></stop>
+                <stop stopColor="#FCD34D"></stop>
+                <stop offset="0.325" stopColor="#F59E0B"></stop>
+                <stop offset="1" stopColor="#EAB308" stopOpacity="0"></stop>
               </motion.linearGradient>
             </defs>
           </svg>

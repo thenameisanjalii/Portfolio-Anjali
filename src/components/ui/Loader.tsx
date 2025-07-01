@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const Loader = () => {
   return (
@@ -20,7 +20,7 @@ const Loader = () => {
           }}
           className="w-20 h-20 border-t-4 border-blue-500 dark:border-blue-500 border-solid rounded-full"
         />
-        
+
         {/* Inner circle */}
         <motion.div
           animate={{
@@ -44,7 +44,7 @@ const Loader = () => {
             ease: "linear",
             repeat: Infinity,
           }}
-          className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 text-gray-800 dark:text-white text-lg font-medium whitespace-nowrap transition-colors duration-300"
+          className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 text-theme-neutral-900 dark:text-white text-lg font-medium whitespace-nowrap transition-colors duration-300"
         >
           Loading Experience...
         </motion.div>
@@ -53,4 +53,4 @@ const Loader = () => {
   );
 };
 
-export default Loader; 
+export default Loader;
