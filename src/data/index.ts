@@ -75,6 +75,46 @@ export const gridItems = [
 export const projects = [
   {
     id: 0,
+    title: "Axen Studio Portfolio Website",
+    des: "Built a responsive portfolio website for a freelance client in a team of 3 using React, TypeScript, Tailwind CSS, and Framer Motion. Showcased studio services and integrated contact form with Google Maps. Delivered a clean, fully deployed production site.",
+    img: home_assets.axen_studio,
+    iconLists: [
+      home_assets.react,
+      home_assets.node_logo,
+      home_assets.express_logo,
+      home_assets.mongodb_logo,
+      home_assets.tailwind,
+    ],
+    link: "https://github.com/thenameisanjalii/Axen-Studio",
+    languages: [
+      {
+        id: 1,
+        name: "React",
+        designation: "Frontend",
+        image: home_assets.react,
+      },
+      {
+        id: 2,
+        name: "TypeScript",
+        designation: "Frontend",
+        image: home_assets.typescript, // replace with your actual TypeScript logo asset
+      },
+      {
+        id: 3,
+        name: "Tailwind CSS",
+        designation: "Styling",
+        image: home_assets.tailwind,
+      },
+      {
+        id: 4,
+        name: "Framer Motion",
+        designation: "Animations",
+        image: home_assets.framer_motion, // replace with your actual Framer logo asset
+      },
+    ],
+  },
+  {
+    id: 1,
     title: "Realtime Chat App",
     des: "Developed a real-time chat app using the MERN stack, Tailwind CSS, Socket.io, and Zustand. Features include JWT authentication, live messaging, online status, and a fully responsive UI with smooth deployment.",
     img: home_assets.chat_app,
@@ -109,7 +149,7 @@ export const projects = [
         id: 4,
         name: "MongoDB",
         designation: "Database",
-        image: home_assets.mongodb_logo, 
+        image: home_assets.mongodb_logo,
       },
       {
         id: 5,
@@ -120,7 +160,7 @@ export const projects = [
     ],
   },
   {
-    id: 1,
+    id: 2,
     title: "AI Powered Blog App",
     des: "Built a full-stack AI-powered blog app using the MERN stack, Google Gemini API, and ImageKit. It enables admins to manage blogs with AI-generated content, image uploads, and user comments, all within a secure, responsive dashboard.",
     img: home_assets.aiblogify,
@@ -155,7 +195,7 @@ export const projects = [
         id: 4,
         name: "MongoDB",
         designation: "Database",
-        image: home_assets.mongodb_logo, 
+        image: home_assets.mongodb_logo,
       },
       {
         id: 4,
@@ -164,7 +204,7 @@ export const projects = [
         image: home_assets.socket,
       },
     ],
-  },  
+  },
 ];
 
 export const testimonials = [

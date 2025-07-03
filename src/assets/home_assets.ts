@@ -38,11 +38,14 @@ import convex from "./convex.webp";
 import socket from "./socket.svg";
 import myself from "./myself.jpg";
 import crowdfunding from "./crowdfunding.jpg";
-import chat_app from "./chat-app.png"
-import aiblogify from "./AIBlogify.png"
+import chat_app from "./chat-app.png";
+import aiblogify from "./AIBlogify.png";
+import axen_studio from "./axen_studio.png";
 import solidity from "./solidity.svg";
-import thirdweb from "./Thirdweb.svg"
-import tailwind from "./tailwind.svg"
+import thirdweb from "./Thirdweb.svg";
+import tailwind from "./tailwind.svg";
+import typescript from "./typscript.png";
+import framer_motion from "./framer_motion.jpg";
 
 const home_assets = {
   css,
@@ -87,9 +90,12 @@ const home_assets = {
   crowdfunding,
   chat_app,
   aiblogify,
+  axen_studio,
   solidity,
   thirdweb,
-  tailwind
+  tailwind,
+  typescript,
+  framer_motion,
 };
 
 export default home_assets;
